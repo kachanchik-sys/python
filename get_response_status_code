@@ -1,0 +1,12 @@
+import requests
+
+r = requests.get('https://habr.com')   #get response
+
+
+if (r.status_code == 200): # 200 code mean good
+    with open("Page.html", "w") as file:
+        file.write(str(r.text))
+    print("ok")
+
+else:
+    print ("error " + str(r.status_code))
